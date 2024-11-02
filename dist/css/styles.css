@@ -103,7 +103,16 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.profile-img {
+  width: 130px;                  /* Tamaño de la imagen */
+  height: 170px;                 /* Asegura que sea un cuadrado */
+  border-radius: 50%;            /* Hace que la imagen sea circular */
+  object-fit: cover;             /* Asegura que la imagen se ajuste sin distorsionarse */
+  margin-bottom: 10px;           /* Espacio entre la imagen y el contenido de abajo */
+  border: 3px solid #fff;        /* Bordes blancos (opcional) */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar la imagen */
 
+}
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -2806,9 +2815,10 @@ textarea.form-control-lg {
   }
 }
 .btn:hover {
-  color: var(--bs-btn-hover-color);
-  background-color: var(--bs-btn-hover-bg);
-  border-color: var(--bs-btn-hover-border-color);
+  background-color:var(--bs-purple);    /* Cambia de color al pasar el mouse */
+  color: #000000;                    /* Color de texto al hacer hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+  transform: scale(1.05);             /* Aumenta ligeramente de tamaño */
 }
 .btn-check + .btn:hover {
   color: var(--bs-btn-color);
@@ -2844,20 +2854,15 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #1D809F;
-  --bs-btn-border-color: #1D809F;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #196d87;
-  --bs-btn-hover-border-color: #17667f;
-  --bs-btn-focus-shadow-rgb: 63, 147, 173;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #17667f;
-  --bs-btn-active-border-color: #166077;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #1D809F;
-  --bs-btn-disabled-border-color: #1D809F;
+  background-color: black;      /* Color de fondo */
+  color: rgb(254, 203, 203);                   /* Color de texto */
+  padding: 15px 30px;             /* Espaciado interno */
+  font-size: 18px;                /* Tamaño de fuente */
+  font-weight: bold;              /* Negrita */
+  border-radius: 25px;            /* Bordes redondeados */
+  text-transform: uppercase;      /* Texto en mayúsculas */
+  transition: all 0.3s ease;      /* Efecto de transición */
+  text-decoration: none;          /* Quitar subrayado */
 }
 
 .btn-secondary {
@@ -2963,20 +2968,15 @@ textarea.form-control-lg {
 }
 
 .btn-dark {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
-  --bs-btn-border-color: #212529;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #424649;
-  --bs-btn-hover-border-color: #373b3e;
-  --bs-btn-focus-shadow-rgb: 66, 70, 73;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #4d5154;
-  --bs-btn-active-border-color: #373b3e;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #212529;
-  --bs-btn-disabled-border-color: #212529;
+  background-color: #000000;      /* Color de fondo */
+  color: rgb(254, 203, 203);                   /* Color de texto */
+  padding: 15px 30px;             /* Espaciado interno */
+  font-size: 18px;                /* Tamaño de fuente */
+  font-weight: bold;              /* Negrita */
+  border-radius: 25px;            /* Bordes redondeados */
+  text-transform: uppercase;      /* Texto en mayúsculas */
+  transition: all 0.3s ease;      /* Efecto de transición */
+  text-decoration: none;          /* Quitar subrayado */
 }
 
 .btn-outline-primary {
@@ -10843,9 +10843,6 @@ html {
   text-transform: uppercase;
 }
 
-.text-faded {
-  color: rgba(255, 255, 255, 0.7);
-}
 
 .scroll-to-top {
   position: fixed;
@@ -10959,7 +10956,7 @@ html {
 
 .callout {
   padding: 15rem 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-callout.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/portafolio1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10991,21 +10988,74 @@ footer.footer .social-link:hover {
   text-decoration: none;
 }
 
-.map {
-  height: 30rem;
+/* Estilos para el contenedor del formulario */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.map iframe {
-  pointer-events: none;
-  height: 100%;
+
+/* Título del formulario */
+.form-title {
+  text-align: center;
+  color: #6610f2;
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+/* Estilos para los campos de entrada y el área de texto */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
   width: 100%;
-  border: 0;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  resize: none;
 }
+
+/* Estilo del área de texto */
+.contact-form textarea {
+  height: 150px;
+}
+
+/* Estilo del botón */
+.contact-form button {
+  background-color: black;      /* Color de fondo */
+  color: rgb(254, 203, 203);                   /* Color de texto */
+  padding: 15px 30px;             /* Espaciado interno */
+  font-size: 18px;                /* Tamaño de fuente */
+  font-weight: bold;              /* Negrita */
+  border-radius: 25px;            /* Bordes redondeados */
+  text-transform: uppercase;      /* Texto en mayúsculas */
+  transition: all 0.3s ease;      /* Efecto de transición */
+  text-decoration: none;          /* Quitar subrayado */
+
+}
+
+.contact-form button:hover {
+  background-color:var(--bs-purple);    /* Cambia de color al pasar el mouse */
+  color: #000000;                    /* Color de texto al hacer hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+  transform: scale(1.05);             /* Aumenta ligeramente de tamaño */
+
+}
+
 
 @media (max-width: 992px) {
   .map {
     height: 75%;
   }
 }
+
+
 .masthead {
   min-height: 30rem;
   position: relative;
@@ -11014,7 +11064,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(50deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 50%), url("../assets/img/fondo3.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11051,7 +11101,7 @@ footer.footer .social-link:hover {
   z-index: 1;
 }
 .portfolio-item .caption .caption-content {
-  color: #fff;
+  color: #000;
   margin: auto 2rem 2rem;
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
@@ -11067,7 +11117,7 @@ footer.footer .social-link:hover {
     max-width: none;
     margin: 0;
   }
-  .portfolio-item .caption {
+  .portfolio-item .caption {4
     transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
     transition: clip-path 0.25s ease-out, background-color 0.7s;
     transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
